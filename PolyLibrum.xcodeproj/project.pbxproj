@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B920AD16255A848500A5F3BD /* TextRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B920AD15255A848500A5F3BD /* TextRenderer.swift */; };
+		B99F469025591D3600B85737 /* OxfordDictionaryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F468F25591D3600B85737 /* OxfordDictionaryManager.swift */; };
+		B99F46932559215E00B85737 /* SwiftOxfordAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F46922559215E00B85737 /* SwiftOxfordAPI.swift */; };
 		B9E6919525582CD40091E661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6919425582CD40091E661 /* AppDelegate.swift */; };
 		B9E6919725582CD40091E661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6919625582CD40091E661 /* SceneDelegate.swift */; };
-		B9E6919925582CD40091E661 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6919825582CD40091E661 /* ViewController.swift */; };
+		B9E6919925582CD40091E661 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E6919825582CD40091E661 /* BookViewController.swift */; };
 		B9E6919C25582CD40091E661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E6919A25582CD40091E661 /* Main.storyboard */; };
 		B9E6919E25582CD60091E661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E6919D25582CD60091E661 /* Assets.xcassets */; };
 		B9E691A125582CD60091E661 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E6919F25582CD60091E661 /* LaunchScreen.storyboard */; };
+		B9E691AE25582DE20091E661 /* TranslationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E691AD25582DE20091E661 /* TranslationManager.swift */; };
+		B9E691B225582F790091E661 /* TranslationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E691B125582F790091E661 /* TranslationData.swift */; };
+		B9E691B5255830C00091E661 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E691B4255830C00091E661 /* WordModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B920AD15255A848500A5F3BD /* TextRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRenderer.swift; sourceTree = "<group>"; };
+		B99F468F25591D3600B85737 /* OxfordDictionaryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxfordDictionaryManager.swift; sourceTree = "<group>"; };
+		B99F46922559215E00B85737 /* SwiftOxfordAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOxfordAPI.swift; sourceTree = "<group>"; };
 		B9E6919125582CD40091E661 /* PolyLibrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyLibrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E6919425582CD40091E661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E6919625582CD40091E661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B9E6919825582CD40091E661 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9E6919825582CD40091E661 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B9E6919B25582CD40091E661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9E6919D25582CD60091E661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9E691A025582CD60091E661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9E691A225582CD60091E661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9E691AD25582DE20091E661 /* TranslationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationManager.swift; sourceTree = "<group>"; };
+		B9E691B125582F790091E661 /* TranslationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationData.swift; sourceTree = "<group>"; };
+		B9E691B4255830C00091E661 /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B920AD18255A848B00A5F3BD /* Translators */ = {
+			isa = PBXGroup;
+			children = (
+				B920AD1A255A84C500A5F3BD /* Oxford */,
+				B920AD19255A84B200A5F3BD /* Google */,
+			);
+			path = Translators;
+			sourceTree = "<group>";
+		};
+		B920AD19255A84B200A5F3BD /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				B9E691AD25582DE20091E661 /* TranslationManager.swift */,
+				B9E691B125582F790091E661 /* TranslationData.swift */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		B920AD1A255A84C500A5F3BD /* Oxford */ = {
+			isa = PBXGroup;
+			children = (
+				B99F468F25591D3600B85737 /* OxfordDictionaryManager.swift */,
+				B99F46922559215E00B85737 /* SwiftOxfordAPI.swift */,
+			);
+			path = Oxford;
+			sourceTree = "<group>";
+		};
 		B9E6918825582CD40091E661 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +95,42 @@
 		B9E6919325582CD40091E661 /* PolyLibrum */ = {
 			isa = PBXGroup;
 			children = (
+				B9E691AB25582D960091E661 /* Model */,
+				B9E691AC25582DA10091E661 /* Controller */,
+				B9E691A925582D6E0091E661 /* View */,
 				B9E6919425582CD40091E661 /* AppDelegate.swift */,
 				B9E6919625582CD40091E661 /* SceneDelegate.swift */,
-				B9E6919825582CD40091E661 /* ViewController.swift */,
-				B9E6919A25582CD40091E661 /* Main.storyboard */,
 				B9E6919D25582CD60091E661 /* Assets.xcassets */,
-				B9E6919F25582CD60091E661 /* LaunchScreen.storyboard */,
 				B9E691A225582CD60091E661 /* Info.plist */,
 			);
 			path = PolyLibrum;
+			sourceTree = "<group>";
+		};
+		B9E691A925582D6E0091E661 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9E6919F25582CD60091E661 /* LaunchScreen.storyboard */,
+				B9E6919A25582CD40091E661 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9E691AB25582D960091E661 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B920AD18255A848B00A5F3BD /* Translators */,
+				B920AD15255A848500A5F3BD /* TextRenderer.swift */,
+				B9E691B4255830C00091E661 /* WordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9E691AC25582DA10091E661 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9E6919825582CD40091E661 /* BookViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +203,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E6919925582CD40091E661 /* ViewController.swift in Sources */,
+				B99F46932559215E00B85737 /* SwiftOxfordAPI.swift in Sources */,
+				B9E6919925582CD40091E661 /* BookViewController.swift in Sources */,
+				B920AD16255A848500A5F3BD /* TextRenderer.swift in Sources */,
+				B9E691B5255830C00091E661 /* WordModel.swift in Sources */,
 				B9E6919525582CD40091E661 /* AppDelegate.swift in Sources */,
+				B9E691B225582F790091E661 /* TranslationData.swift in Sources */,
 				B9E6919725582CD40091E661 /* SceneDelegate.swift in Sources */,
+				B9E691AE25582DE20091E661 /* TranslationManager.swift in Sources */,
+				B99F469025591D3600B85737 /* OxfordDictionaryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
