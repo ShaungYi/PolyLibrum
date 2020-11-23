@@ -23,6 +23,10 @@ struct WordModel {
         for str in stringArray{
             let word = WordModel(word: String(str), meanings: ["flip", "flop"])
             wordArray.append(word)
+            
+            let space = WordModel(word: " ", meanings: ["a nameless void above the earth"])
+            
+            wordArray.append(space)
         }
         
         

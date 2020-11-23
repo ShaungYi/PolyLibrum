@@ -7,10 +7,20 @@
 
 import UIKit
 
+
+
+
 class BookViewController: UIViewController, TranslationManagerDelegate {
     
     
+    
+    let wordArray = WordModel.toWordArray(sentence: "hello hello hello")
+    let imaginaryFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)!
+
+    
+    
     @IBOutlet var mainView: UIStackView!
+    @IBOutlet weak var tablet: UITableView!
     
     
     var dictionaryManager = TranslatonManager()
@@ -21,27 +31,31 @@ class BookViewController: UIViewController, TranslationManagerDelegate {
         super.viewDidLoad()
         
         
-        let viewWidth: CGFloat = mainView.frame.width
+        let viewWidth: CGFloat = 10
+        
+        
+        
         
         textRenderer = TextRenderer(lineLength: viewWidth, remainingSpace: viewWidth)
         
         
         
         dictionaryManager.delegate = self
-        textRenderer!.delegate = self
-        
-        
-//        let wordArray = WordModel.toWordArray(sentence: "hello hello hello")
-        
-        addPusherView(mainView)
+        tablet.dataSource = self
         
         
         
-        let line: UIStackView = addLine()
+        tablet.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         
-        addWord(line: line, word: WordModel(word: "hello", meanings: ["hola"]))
         
-//        textRenderer?.addWords(words: wordArray)
+        
+        setTableViewLineSpacing(lineFont: imaginaryFont, spacing: 3)
+        
+//        self.tablet.rowHeight = 300
+        
+        
+    
+
         
     }
     
@@ -52,105 +66,72 @@ class BookViewController: UIViewController, TranslationManagerDelegate {
 
 }
 
+//MARK: - TableViewDataSource
 
 
-//MARK: - WeatherManagerDelegate
 
+extension BookViewController: UITableViewDataSource{
 
-extension BookViewController: TextRendererDelegate{
     
     
-    
-    func addLine() -> UIStackView{
-        
-        let line = UIStackView()
-        line.axis = NSLayoutConstraint.Axis.horizontal
-        line.distribution = UIStackView.Distribution.fillProportionally
-        
-        
-        mainView.addArrangedSubview(line)
-        
-        removeAllConstraints(view: mainView)
-        
-//        mainView.addConstraint(NSLayoutConstraint(item: line, attribute: .width, relatedBy: .equal, toItem: mainView, attribute: .width, multiplier: 1, constant: 100))
-
-        
-        addPusherView(line)
-        
-        return line
-        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
     
     
-    func addWord(line: UIStackView, word: WordModel) -> UIView {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! LineTableViewCell
         
-        let frameView = UIView();
-        frameView.backgroundColor = .green
-        
-        
-        let wordLabel = UILabel()
-        wordLabel.text = word.word
-        wordLabel.backgroundColor = .red
-        frameView.addSubview(wordLabel)
+        cell.addWords(wordArray)
+        cell.setFont(imaginaryFont)
         
         
-        line.addArrangedSubview(frameView)
-        line.backgroundColor = .red
-        
-        
-        
-        wordLabel.trailingAnchor.constraint(equalTo: frameView.trailingAnchor)
-        wordLabel.topAnchor.constraint(equalTo: frameView.topAnchor)
-        wordLabel.bottomAnchor.constraint(equalTo: frameView.bottomAnchor)
-        wordLabel.leadingAnchor.constraint(equalTo: frameView.leadingAnchor)
-        
-        
-        
-        removeAllConstraints(view: frameView)
-
-
-
-        let trailingConstraint = NSLayoutConstraint(item: wordLabel, attribute: .trailing, relatedBy: .equal, toItem: frameView, attribute: .trailing, multiplier: 1, constant: 0)
-
-        let leadingConstraint = NSLayoutConstraint(item: wordLabel, attribute: .leading, relatedBy: .equal, toItem: frameView, attribute: .leading, multiplier: 1, constant: 0)
-
-        let topConstraint = NSLayoutConstraint(item: wordLabel, attribute: .top, relatedBy: .equal, toItem: frameView, attribute: .top, multiplier: 1, constant: 0)
-
-        let bottomConstraint = NSLayoutConstraint(item: wordLabel, attribute: .bottom, relatedBy: .equal, toItem: frameView, attribute: .bottom, multiplier: 1, constant: 0)
-
-        frameView.addConstraints([trailingConstraint, leadingConstraint, topConstraint, bottomConstraint])
-        
-        
-        textRenderer?.remainingSpace -= wordLabel.frame.width
-        
-        
-        return frameView
-        
+        return cell
     }
+
     
     
+    //MARK: - Line Spacing Setter
     
-    
-    func addPusherView( _ mainView: UIStackView){
+    func setTableViewLineSpacing(lineFont: UIFont?, spacing: CGFloat){
         
-        let pusher = UIView()
-        mainView.addSubview(pusher)
         
-    }
-    
-    func wordFits(word frameView: UIView) -> Bool {
-        if frameView.frame.width < textRenderer!.remainingSpace {
-            return true
+        if let font = lineFont {
+            let newHeight = font.lineHeight + 2 * spacing
+            self.tablet.rowHeight = newHeight
+            print("spacing set")
         }
-        return false
+        
+        
     }
     
     
-    func removeAllConstraints(view: UIView){
-        for contraint in view.constraints{
-            view.removeConstraint(contraint)
-        }
-    }
 }
+
+
+//MARK: - Translation Bubble Controller
+
+extension BookViewController {
+    
+}
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
 

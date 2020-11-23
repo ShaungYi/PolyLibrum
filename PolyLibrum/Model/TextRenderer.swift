@@ -51,6 +51,9 @@ class TextRenderer{
             currentLine = delegate?.addLine()
         }
         
+        
+        
+        
     }
     
     

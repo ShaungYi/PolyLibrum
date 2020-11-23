@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>874438719632-i2uv5cq40sqp9nen3cup0ht2ada3a09u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.874438719632-i2uv5cq40sqp9nen3cup0ht2ada3a09u</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9ZrV5QA6HcAA5XQs8MVwanXjns9EVuCs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>874438719632</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.seonghayi.PolyLibrum</string>
+	<key>PROJECT_ID</key>
+	<string>polylibrum</string>
+	<key>STORAGE_BUCKET</key>
+	<string>polylibrum.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:874438719632:ios:eff440a3c2989bbb7c8015</string>
+	<key>DATABASE_URL</key>
+	<string>https://polylibrum.firebaseio.com</string>
+</dict>
+</plist>
